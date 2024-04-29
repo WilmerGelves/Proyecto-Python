@@ -1,0 +1,28 @@
+{
+    "paciente": {
+        "1244325": {
+            "cedula": "1244325",
+            "nombrePaciente": "rosalba ",
+            "apellidos": "garc\u00eda",
+            "celular": "21342534643"
+        },
+        "12314345": {
+            "cedula": "12314345",
+            "nombrePaciente": "luis omar ",
+            "apellidos": "gelves ",
+            "celular": "320324345"
+        },
+        "124133244": {
+            "cedula": "124133244",
+            "nombrePaciente": "edisabeth",
+            "apellidos": "gelves",
+            "celular": "2412423534"
+        },
+        "12435346": {
+            "cedula": "12435346",
+            "nombrePaciente": "aminta ",
+            "apellidos": "pabon",
+            "celular": "314245346"
+        }
+    }
+}

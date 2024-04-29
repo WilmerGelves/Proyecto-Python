@@ -1,0 +1,24 @@
+{
+    "doctores": {
+        "1003234": {
+            "identificacion": "1003234",
+            "nombreMedico": "maryori",
+            "apellidos": "contreras",
+            "especilidad ": "cardi\u00f3loga",
+            "correo": "maryo@gmail.com",
+            "consultorio": "234",
+            "manana": 7,
+            "tarde": 2
+        },
+        "109323556": {
+            "identificacion": "109323556",
+            "nombreMedico": "wilmer",
+            "apellidos": "gelves",
+            "especilidad ": "ginecologo",
+            "correo": "wilg@gmail.com",
+            "consultorio": "123",
+            "manana": 7,
+            "tarde": 2
+        }
+    }
+}

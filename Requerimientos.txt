@@ -1,0 +1,18 @@
+1) El programa debe permitir crear las especialidades. 
+
+2)Permitir registrar,editar ,buscar y eliminar médicos. (Si el médico ha atendido pacientes, tampoco puede ser eliminado).
+
+3)Debe permitir agregar,editar, buscar pacientes , pero no eliminar. 
+
+4)Debe permitir gestionar las citas médicas.(programar agenda de los médicos,debe permitir crear y cancelar citas)
+
+5)Debe permitir que el médico drurante la cita pueda agregar información sobre la atención al paciente. (sintomas,recomendaciones de tratamiento,el tratamiento(en el tratamiento se debe guardar medicamentos,dosificacion, etc.),fecha de atención al paciente. 
+
+6) El programa debe ser capaz de gestionar y organizar las citas médicas de cada uno de los médicos que laboran en la institución.
+
+En cada consulta el médico debe generar un diagnóstico y un tratamiento dicha
+información debe quedar guardada en un histórico el cual podrá ser consultado
+la próxima vez que el paciente asista con el especialista; el paciente podrá
+acceder a la aplicación ingresando su número de cédula y así podrá consultar la
+información de la consulta médica y revisar el tratamiento que el médico
+recomendó para su enfermedad.
