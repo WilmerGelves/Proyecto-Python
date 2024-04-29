@@ -27,9 +27,9 @@ def menuPrincipal(op):
                 case 1: 
                     faces.gestionS(0)
                 case 2: 
-                    faces.gestioM(0)
+                    faces.gestionM(0)
                 case 3: 
-                    faces.gestioP(0)
+                    faces.gestionP(0)
                 case 4: 
                     globals.borrar_pantalla()
                     print('Fue un gusto servirle...Vuelva pronto.')

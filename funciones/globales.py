@@ -14,6 +14,7 @@ def pausar_pantalla():
   else:
     system("pause")
 
+
 servicios = {
   'area':{}
 }
@@ -25,3 +26,4 @@ especialistas = {
 pacientes = {
   "paciente":{}
 }
+

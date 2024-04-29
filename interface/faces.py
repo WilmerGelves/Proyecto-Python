@@ -1,6 +1,6 @@
 import main
 import funciones.globales as globals
-import funciones.roles as doc
+import funciones.roles as roles
 import funciones.servicios as sv
 def gestionS(op : int ):
     title = """
@@ -8,9 +8,9 @@ def gestionS(op : int ):
     * MODULO DE SERVICIOS *
     ***********************
     """
-    menuS = '\t1.Agregar Servicio.\n\t2.Modificar Servicio.\n\t3.Eliminar Servicio.\n\t4.Salir'
+    menuS = '\t1.Agregar Servicio.\n\t2.Buscar Servicio.\n\t3.Modificar Servicio.\n\t4.Eliminar Servicio.\n\t5.Salir'
     globals.borrar_pantalla()
-    if (op != 4):
+    if (op != 5):
         print(title)
         print(menuS)
         try:
@@ -24,10 +24,21 @@ def gestionS(op : int ):
                 case 1:
                     sv.newService()
                 case 2:
-                    pass
+                    resultado = sv.buscarS()
+                    if resultado is None:
+                        print('El servicio no fue encontrado...')
+                        globals.pausar_pantalla()
+                        gestionS(0)
+                    else:
+                        print(resultado)
+                        globals.pausar_pantalla()
+                        gestionS(0)
+                    
                 case 3:
-                    pass
+                    sv.modificarS()
                 case 4:
+                    pass
+                case 5:
                     globals.borrar_pantalla()
                     print('Has salido de gestión de Servicios')
                     globals.pausar_pantalla()
@@ -41,7 +52,7 @@ def gestionS(op : int ):
 
 
 
-def gestioM(op :int):
+def gestionM(op :int):
     title = """
     **********************
     * GESTION DEL MEDICO *
@@ -57,17 +68,17 @@ def gestioM(op :int):
         except ValueError:
             print('Opcion inválida')
             globals.pausar_pantalla()
-            gestioM(0)
+            gestionM(0)
         else:
             match (op):
                 case 1:
-                    doc.newSpecialist()
+                    roles.newSpecialist()
                 case 2:
-                    gestioM(0)
+                    gestionM(0)
                 case 3:
-                    gestioM(0)
+                    gestionM(0)
                 case 4:
-                    gestioM(0)
+                    gestionM(0)
                 case 5:
                     globals.borrar_pantalla()
                     print('Ha salido de gestion al médico')
@@ -76,10 +87,10 @@ def gestioM(op :int):
                 case _:
                     print('Opción inválida...Intente nuevamente.')
                     globals.pausar_pantalla()
-                    gestioM(0)
+                    gestionM(0)
 
 
-def gestioP(op :int):
+def gestionP(op :int):
     title = """
     ***********************
     * GESTION Al PACIENTE *
@@ -95,17 +106,25 @@ def gestioP(op :int):
         except ValueError:
             print('Opcion inválida')
             globals.pausar_pantalla()
-            gestioM(0)
+            gestionP(0)
         else:
             match (op):
                 case 1:
-                    doc.newPaciente()
+                    roles.newPaciente()
                 case 2:
-                    gestioP(0)
+                    gestionP(0)
                 case 3:
-                    gestioP(0)
+                    resultado = roles.buscarP()
+                    if resultado is None:
+                        print('El paciente no fue encontrado...')
+                        globals.pausar_pantalla()
+                        gestionS(0)
+                    else:
+                        print(resultado)
+                        globals.pausar_pantalla()
+                        gestionP(0)
                 case 4:
-                    gestioP(0)
+                    roles.modificarP()
                 case 5:
                     globals.borrar_pantalla()
                     print('Ha salido de gestion al paciente')
@@ -114,4 +133,4 @@ def gestioP(op :int):
                 case _:
                     print('Opción inválida...Intente nuevamente.')
                     globals.pausar_pantalla()
-                    gestioP(0)
+                    gestionP(0)

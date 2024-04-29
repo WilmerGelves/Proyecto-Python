@@ -1,12 +1,13 @@
 {
-    "area": {
-        "345": {
-            "codServicio": "345",
-            "nombreServicio": "odontologia"
-        },
-        "64563": {
-            "codServicio": "64563",
-            "nombreServicio": "pediatr\u00eda"
+    "paciente": {
+        "1093923457": {
+            "cedula": "1093923457",
+            "nombrePaciente": "wilmer",
+            "apellidos": "Garcia",
+            "celular": "310323847",
+            "fechaNacimiento": "14 de diciembre de 1998",
+            "edad": "25",
+            "genero": "m"
         }
     }
 }

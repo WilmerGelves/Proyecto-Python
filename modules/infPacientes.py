@@ -7,6 +7,10 @@ def NewFile(*param):
     with open(DATA_PACIENTES,"w") as wf: #bufer de escritura
         json.dump(param[0],wf,indent=4)
 
+def UpdateFile(*param):
+    with open(DATA_PACIENTES,"w") as fw:
+        json.dump(param[0],fw,indent=4)
+
 
 def AddData(*param):
     paciente = list(param)

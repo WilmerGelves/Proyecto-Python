@@ -19,6 +19,16 @@
             "consultorio": "123",
             "manana": 7,
             "tarde": 2
+        },
+        "123123124": {
+            "identificacion": "123123124",
+            "nombreMedico": "eduard",
+            "apellidos": "gelves",
+            "especilidad ": "chanchan",
+            "correo": "efwrfegf@sgfsd",
+            "consultorio": "123",
+            "manana": 7,
+            "tarde": 2
         }
     }
 }

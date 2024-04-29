@@ -18,8 +18,30 @@ def newService():
         'nombreServicio': nombreServicio
     }
     infS.AddData('area',codServicio, servicio) 
-    globals.servicios.get('area').update({codServicio: nombreServicio})
+    globals.servicios.get('area').update({codServicio: servicio})
     if(bool(input('Desea registrar otro servicio... S(Si) o Enter(No)'))):
         newService()
     else:
         faces.gestionS(0)
+
+def buscarS():
+    globals.borrar_pantalla()
+    tipo = input('Código del servicio a buscar: ')
+    try:
+        info = globals.servicios.get('area').get(tipo)
+    except ValueError:
+        return None
+    else:
+        return info
+    
+
+def modificarS():
+    dataService = buscarS()
+    codServicio,nombreServicio = dataService.values()
+    for key in dataService.keys():
+        if(bool(input(f'Desea modificar el {key} S(si) Enter(no)'))):
+            dataService[key] = input(f'Ingrese el nuevo valor de {key}: ')
+    globals.servicios.get('area').update({codServicio: dataService}) 
+    infS.UpdateFile(globals.servicios)
+    print(globals.servicios)
+    faces.gestionS(0)
