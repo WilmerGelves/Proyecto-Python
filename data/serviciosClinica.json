@@ -1,13 +1,12 @@
 {
-    "paciente": {
-        "1093923457": {
-            "cedula": "1093923457",
-            "nombrePaciente": "wilmer",
-            "apellidos": "Garcia",
-            "celular": "310323847",
-            "fechaNacimiento": "14 de diciembre de 1998",
-            "edad": "25",
-            "genero": "m"
+    "area": {
+        "3456": {
+            "codServicio": "3456",
+            "nombreServicio": "pediatr\u00eda"
+        },
+        "789": {
+            "codServicio": "789",
+            "nombreServicio": "otorrino"
         }
     }
 }
