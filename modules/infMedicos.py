@@ -1,7 +1,7 @@
 import json 
 import os
 
-DATA_MEDICOS = 'data/'  #ruta de la carpeta que almacena los datos.
+DATA_MEDICOS = 'data/especialistas.json'  #ruta de la carpeta que almacena los datos.
 
 def NewFile(*param):
     with open(DATA_MEDICOS,"w") as wf: #bufer de escritura

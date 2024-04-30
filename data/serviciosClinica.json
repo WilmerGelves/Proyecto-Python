@@ -1,12 +1,8 @@
 {
     "area": {
-        "3456": {
-            "codServicio": "3456",
-            "nombreServicio": "pediatr\u00eda"
-        },
-        "789": {
-            "codServicio": "789",
-            "nombreServicio": "otorrino"
+        "345": {
+            "codServicio": "345",
+            "nombreServicio": "Urologia"
         }
     }
 }

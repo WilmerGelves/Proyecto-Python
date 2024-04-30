@@ -37,6 +37,29 @@ def newSpecialist():
     else:
         faces.gestionM(0)
 
+def buscarE():
+    globals.borrar_pantalla()
+    tipo = input('Cedula del/la especialista a buscar: ')
+    try:
+        info = globals.especialistas.get('doctores').get(tipo)
+    except ValueError:
+        return None
+    else:
+        return info
+    
+
+def modificarE():
+    dataEspecialista = buscarE()
+    identMedico,nombreMedico,apellidos,especialidad,correo,consultorio,mañana,tarde = dataEspecialista.values()
+    for key in dataEspecialista.keys():
+        if (key != 'identificacion'):
+            if(bool(input(f'Desea modificar {key} S(si) Enter(no)'))):
+                dataEspecialista[key] = input(f'Ingrese el nuevo valor de {key}: ')
+    globals.especialistas.get('doctores').update({identMedico:dataEspecialista})
+    infM.UpdateFile(globals.especialistas)    
+    faces.gestionM(0)
+
+#-----------------------------------------------------#--------------------------------------------------#----------------------------------------
 def newPaciente():
     globals.borrar_pantalla()
     cedula = input('Cedula del paciente: ')
@@ -57,10 +80,11 @@ def newPaciente():
     }
     infP.AddData('paciente',cedula,paciente)
     globals.pacientes.get('paciente').update({cedula:paciente})
-    if(bool(input('Desea registrar otro servicio... S(Si) o Enter(No)'))):
+    if(bool(input('Desea registrar otro paciente... S(Si) o Enter(No)'))):
         newPaciente()
     else:
         faces.gestionP(0)
+        
 
 def buscarP():
     globals.borrar_pantalla()
@@ -78,8 +102,8 @@ def modificarP():
     cedula,nombrePaciente,apellidos,celular,fechaNacimiento,edad,genero = dataPaciente.values()
     for key in dataPaciente.keys():
         if (key != 'cedula'):
-            if(bool(input(f'Desea modificar el {key} S(si) Enter(no)'))):
+            if(bool(input(f'Desea modificar {key} S(si) Enter(no)'))):
                 dataPaciente[key] = input(f'Ingrese el nuevo valor de {key}: ')
-    globals.pacientes.get('paciente').update({cedula: dataPaciente})
-    infS.UpdateFile(globals.pacientes)    
+    globals.pacientes.get('paciente').update({cedula:dataPaciente})
+    infP.UpdateFile(globals.pacientes)    
     faces.gestionP(0)

@@ -39,9 +39,10 @@ def modificarS():
     dataService = buscarS()
     codServicio,nombreServicio = dataService.values()
     for key in dataService.keys():
-        if(bool(input(f'Desea modificar el {key} S(si) Enter(no)'))):
-            dataService[key] = input(f'Ingrese el nuevo valor de {key}: ')
-    globals.servicios.get('area').update({codServicio: dataService}) 
+        if(key != 'codServicio'):
+            if(bool(input(f'Desea modificar {key} S(si) Enter(no)'))):
+                dataService[key] = input(f'Ingrese el nuevo valor de {key}: ')
+    globals.servicios.get('area').update({codServicio: dataService})
     infS.UpdateFile(globals.servicios)
     print(globals.servicios)
     faces.gestionS(0)

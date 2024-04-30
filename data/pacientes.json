@@ -2,11 +2,20 @@
     "paciente": {
         "1093923457": {
             "cedula": "1093923457",
-            "nombrePaciente": "wilmer",
-            "apellidos": "gelves",
+            "nombrePaciente": "Carlos",
+            "apellidos": "Hoyos",
             "celular": "310323847",
             "fechaNacimiento": "14 de diciembre de 1998",
             "edad": "25",
+            "genero": "m"
+        },
+        "123234346": {
+            "cedula": "123234346",
+            "nombrePaciente": "aminta",
+            "apellidos": "pabon ",
+            "celular": "3125456",
+            "fechaNacimiento": "1998",
+            "edad": "65",
             "genero": "m"
         }
     }

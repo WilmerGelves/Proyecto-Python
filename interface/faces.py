@@ -74,9 +74,17 @@ def gestionM(op :int):
                 case 1:
                     roles.newSpecialist()
                 case 2:
-                    gestionM(0)
+                    roles.modificarE()
                 case 3:
-                    gestionM(0)
+                    resultado = roles.buscarE()
+                    if resultado is None:
+                        print('El especialista no fue encontrado...')
+                        globals.pausar_pantalla()
+                        gestionM(0)
+                    else:
+                        print(resultado)
+                        globals.pausar_pantalla()
+                        gestionM(0)
                 case 4:
                     gestionM(0)
                 case 5:

@@ -41,7 +41,7 @@ def menuPrincipal(op):
                     menuPrincipal(0)
 
 if __name__ == '__main__':
-    infM.DATA_MEDICOS= 'data/especialistas.json '
+    infM.DATA_MEDICOS= 'data/especialistas.json'
     infM.checkFile(globals.especialistas)
     infP.DATA_PACIENTES = 'data/pacientes.json'
     infP.checkFile(globals.pacientes)
