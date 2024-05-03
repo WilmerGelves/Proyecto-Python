@@ -12,7 +12,7 @@ def menuPrincipal(op):
     * CENTRO MEDICO - CALROS ARDILA LULE *
     **************************************
     """
-    options = '\t1.Gestion de Servicios.\n\t2.Gestionar al médico.\n\t3.Gestion al pacientes.\n\t4.Salir'
+    options = '\t1.Gestion de Servicios.\n\t2.Gestion al médico.\n\t3.Gestion al pacientes.\n\t4.Salir'
     if (op != 4):
         print(encabezdo)
         print(options)

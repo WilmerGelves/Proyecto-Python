@@ -37,7 +37,7 @@ def gestionS(op : int ):
                 case 3:
                     sv.modificarS()
                 case 4:
-                    pass
+                    sv.deleteS()
                 case 5:
                     globals.borrar_pantalla()
                     print('Has salido de gestión de Servicios')
@@ -86,7 +86,7 @@ def gestionM(op :int):
                         globals.pausar_pantalla()
                         gestionM(0)
                 case 4:
-                    gestionM(0)
+                    roles.deleteE()
                 case 5:
                     globals.borrar_pantalla()
                     print('Ha salido de gestion al médico')
@@ -104,9 +104,9 @@ def gestionP(op :int):
     * GESTION Al PACIENTE *
     ***********************
     """
-    menuP = '\t1.Registrar paciente\n\t2.Asignar cita\n\t3.Buscar paciente\n\t4.Editar paciente\n\t5.Salir'
+    menuP = '\t1.Registrar paciente\n\t2.Asignar cita\n\t3.Buscar paciente\n\t4.Editar paciente\n\t5.Historial del paciente\n\t6.Salir'
     globals.borrar_pantalla()
-    if (op != 5):
+    if (op != 6):
         print(title)
         print(menuP)
         try:
@@ -120,7 +120,7 @@ def gestionP(op :int):
                 case 1:
                     roles.newPaciente()
                 case 2:
-                    gestionP(0)
+                    pass
                 case 3:
                     resultado = roles.buscarP()
                     if resultado is None:
@@ -134,6 +134,8 @@ def gestionP(op :int):
                 case 4:
                     roles.modificarP()
                 case 5:
+                    pass
+                case 6:
                     globals.borrar_pantalla()
                     print('Ha salido de gestion al paciente')
                     globals.pausar_pantalla()
@@ -142,3 +144,5 @@ def gestionP(op :int):
                     print('Opción inválida...Intente nuevamente.')
                     globals.pausar_pantalla()
                     gestionP(0)
+
+

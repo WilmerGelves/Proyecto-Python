@@ -1,5 +1,4 @@
 import funciones.globales as globals
-import json
 import modules.infServicios as infS
 import interface.faces as faces
 
@@ -19,7 +18,15 @@ def newService():
     }
     infS.AddData('area',codServicio, servicio) 
     globals.servicios.get('area').update({codServicio: servicio})
-    if(bool(input('Desea registrar otro servicio... S(Si) o Enter(No)'))):
+    opciones = 'Desea hacer un nuevo registro: \n1.Si\n2.No'
+    print(opciones)
+    op = int(input('=>'))
+    while(op != 1 and op != 2):
+        globals.borrar_pantalla()
+        print('Opcion inválida...Intente Nuevamente')
+        print(opciones)
+        op = int(input('=>'))
+    if(op == 1):
         newService()
     else:
         faces.gestionS(0)
@@ -46,3 +53,25 @@ def modificarS():
     infS.UpdateFile(globals.servicios)
     print(globals.servicios)
     faces.gestionS(0)
+
+def deleteS():
+    dataDel = buscarS()
+    if 'codServicio' in dataDel:
+        codServicio = dataDel['codServicio']
+        opciones = 'Desea Eliminar\n1.Si\n2.No'
+        print(opciones)
+        op = int (input('=>'))
+        while (op != 1 and op != 2):
+            globals.borrar_pantalla()
+            print(opciones)
+            op = int (input('=>'))
+        if (op == 1):
+            globals.servicios.get('area').pop(codServicio)
+            infS.UpdateFile(globals.servicios)
+            faces.gestionS(0)
+        else:
+            faces.gestionS(0)
+    else:
+        print('Especialista no encontrado.')
+        faces.gestionS(0)
+            

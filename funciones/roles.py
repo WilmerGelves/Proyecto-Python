@@ -4,6 +4,7 @@ import modules.infPacientes as infP
 import modules.infServicios as infS
 import interface.faces as faces
 
+
 def newSpecialist():
     title = """
     ***********************
@@ -18,8 +19,7 @@ def newSpecialist():
     especialidad = input('Especialidad: ') .lower()
     correo = input('Correo: ').lower()
     consultorio = input('Número de consultorio: ')
-    manana = int(input('Horario de la mañana: '))
-    tarde = int(input('Horario de la tarde: '))
+    horarioA = input('Horario: ').lower()
     especialista = {
         'identificacion': identMedico,
         'nombreMedico': nombreMedico,
@@ -27,13 +27,20 @@ def newSpecialist():
         'especilidad ':especialidad,
         'correo':correo,
         'consultorio':consultorio,
-        'manana':manana,
-        'tarde': tarde,
+        'horarioA':horarioA
     }
     infM.AddData('doctores',identMedico, especialista) #Agrega la información suministrada al json.
     globals.especialistas.get('doctores').update({identMedico: especialista})#guarda la información en el diccionario local. 
-    if(bool(input('Desea registrar otro servicio... S(Si) o Enter(No)'))):
-        newSpecialist()
+    opciones = 'Desea hacer un nuevo registro: \n1.Si\n2.No'
+    print(opciones)
+    op = int(input('=>'))
+    while(op != 1 and op != 2):
+        globals.borrar_pantalla()
+        print('Opcion inválida...Intente Nuevamente')
+        print(opciones)
+        op = int(input('=>'))
+    if(op == 1):
+        newPaciente()
     else:
         faces.gestionM(0)
 
@@ -50,14 +57,35 @@ def buscarE():
 
 def modificarE():
     dataEspecialista = buscarE()
-    identMedico,nombreMedico,apellidos,especialidad,correo,consultorio,mañana,tarde = dataEspecialista.values()
+    identMedico,nombreMedico,apellidos,especialidad,correo,consultorio,horarioA = dataEspecialista.values()
     for key in dataEspecialista.keys():
         if (key != 'identificacion'):
             if(bool(input(f'Desea modificar {key} S(si) Enter(no)'))):
-                dataEspecialista[key] = input(f'Ingrese el nuevo valor de {key}: ')
+                dataEspecialista[key] = input(f'Ingrese un nuevo valor para {key}: ')
     globals.especialistas.get('doctores').update({identMedico:dataEspecialista})
     infM.UpdateFile(globals.especialistas)    
     faces.gestionM(0)
+
+def deleteE():
+    dataDel = buscarE()
+    if 'identificacion' in dataDel:
+        identificacion = dataDel['identificacion']
+        opciones = 'Desea Eliminar\n1.Si\n2.No'
+        print(opciones)
+        op = int (input('=>'))
+        while (op != 1 and op != 2):
+            globals.borrar_pantalla()
+            print(opciones)
+            op = int (input('=>'))
+        if (op == 1):
+            globals.especialistas.get('doctores').pop(identificacion)
+            infM.UpdateFile(globals.especialistas)
+            faces.gestionM(0)
+        else:
+            faces.gestionM(0)
+    else:
+        print('Especialista no encontrado.')
+        faces.gestionM(0)
 
 #-----------------------------------------------------#--------------------------------------------------#----------------------------------------
 def newPaciente():
@@ -80,11 +108,19 @@ def newPaciente():
     }
     infP.AddData('paciente',cedula,paciente)
     globals.pacientes.get('paciente').update({cedula:paciente})
-    if(bool(input('Desea registrar otro paciente... S(Si) o Enter(No)'))):
+    globals.borrar_pantalla()
+    opciones = 'Desea hacer un nuevo registro: \n1.Si\n2.No'
+    print(opciones)
+    op = int(input('=>'))
+    while(op != 1 and op != 2):
+        globals.borrar_pantalla()
+        print('Opcion inválida...Intente Nuevamente')
+        print(opciones)
+        op = int(input('=>'))
+    if(op == 1):
         newPaciente()
     else:
         faces.gestionP(0)
-        
 
 def buscarP():
     globals.borrar_pantalla()
