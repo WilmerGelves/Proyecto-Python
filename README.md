@@ -1,0 +1,1 @@
+Este repositorio maneja la estructura de un programa para a gestión de informacion en una clínica convencional. Las funcionalidades principales se enfocan en el registro de información de medicos,pacientes y servicos, asi como tambíen la busqueda y y actualización de los mismos. 
