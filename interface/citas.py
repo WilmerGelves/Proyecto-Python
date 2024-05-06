@@ -25,6 +25,7 @@ def menuCitas(op :int):
                 case 2:
                     cts.deleteCita()
                 case 3:
+                    globals.borrar_pantalla()
                     print('Ha salido de Gestión de citas')
                     globals.pausar_pantalla()
                     faces.gestionP(0)

@@ -1,0 +1,13 @@
+{
+    "doctores": {
+        "109324324": {
+            "identificacion": "109324324",
+            "nombreMedico": "wilson",
+            "apellidos": "burgos",
+            "especialidad ": "ginecologia",
+            "correo": "wilson@gmail.com",
+            "consultorio": "1",
+            "horario": "de 08:00 AM a 12:00 PM y de 02:00 PM a 05:00 PM"
+        }
+    }
+}

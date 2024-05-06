@@ -11,7 +11,7 @@ def administrador():
     
     cedulaAdministrador = input('Ingrese la su cédula: ')
     try:
-        if cedulaAdministrador in usuario.get('administrador').get(cedulaAdministrador).get('cedulaUser'):
+        if (cedulaAdministrador in usuario.get('administrador').get(cedulaAdministrador).get('cedulaUser')):
             barra.barraProgresoP()
     except AttributeError:
         barra.barraProgresoD()
@@ -40,6 +40,7 @@ def paciente():
         if cc in clientes.get('paciente').get(cc).get('cedula'):
             barra.barraProgresoP()
             gh.historialPaciente()
+          
     except AttributeError:
         barra.barraProgresoD()
         inicio.menuEntrada(0)
