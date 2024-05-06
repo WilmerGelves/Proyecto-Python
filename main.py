@@ -1,9 +1,11 @@
 import modules.infMedicos as infM
 import modules.infPacientes as infP
 import modules.infServicios as infS
+import modules.infCitas as infC
 import interface.faces as faces
 import funciones.globales as globals
-
+import modules.gestionHistoricos as gh
+import interface.interfazInicio as inicio
 
 def menuPrincipal(op):
     globals.borrar_pantalla()
@@ -41,12 +43,17 @@ def menuPrincipal(op):
                     menuPrincipal(0)
 
 if __name__ == '__main__':
-    infM.DATA_MEDICOS= 'data/especialistas.json'
+    infM.DATA_MEDICOS = 'data/especialistas.json'
     infM.checkFile(globals.especialistas)
     infP.DATA_PACIENTES = 'data/pacientes.json'
     infP.checkFile(globals.pacientes)
     infS.MY_DATABASE = 'data/serviciosClinica.json'
     infS.checkFile(globals.servicios)
+    infC.MY_DATABASE = 'data/citas.json'
+    infC.checkFile(globals.citas)
+    gh.HISTORICO = 'data/historiasClinicas.json'
+    gh.checkFile(globals.historia)
+    inicio.menuEntrada(0)
     menuPrincipal(0)
 
     

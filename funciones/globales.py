@@ -5,7 +5,7 @@ from datetime import date
 import funciones.roles as roles
 import interface.faces as faces
 
-
+#Funciones globales y diccionarios locales.
 def borrar_pantalla():
   if(sys.platform == "linux" or sys.platform == "darwin"):
     system("clear")
@@ -17,6 +17,7 @@ def pausar_pantalla():
     x=input("Presione un tecla para continuar")
   else:
     system("pause")
+
 
 
 servicios = {
@@ -31,3 +32,10 @@ pacientes = {
   "paciente":{}
 }
 
+citas = {
+  'cita': {}
+}
+
+historia = {
+  'historico':{}
+}

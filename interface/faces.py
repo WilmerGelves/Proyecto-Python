@@ -2,6 +2,9 @@ import main
 import funciones.globales as globals
 import funciones.roles as roles
 import funciones.servicios as sv
+import interface.citas as citas
+import funciones.gestorHistorico as gh
+#Este es el cuerpo del programa, son  parte de los movimientos de un sitio a otro
 def gestionS(op : int ):
     title = """
     ***********************
@@ -16,7 +19,7 @@ def gestionS(op : int ):
         try:
             op = int(input('\t=>'))
         except ValueError:
-            print('Opcion inválida')
+            print('Opción inválida')
             globals.pausar_pantalla()
             gestionS(0)
         else:
@@ -104,7 +107,7 @@ def gestionP(op :int):
     * GESTION Al PACIENTE *
     ***********************
     """
-    menuP = '\t1.Registrar paciente\n\t2.Asignar cita\n\t3.Buscar paciente\n\t4.Editar paciente\n\t5.Historial del paciente\n\t6.Salir'
+    menuP = '\t1.Registrar paciente\n\t2.Gestionar cita\n\t3.Buscar paciente\n\t4.Editar paciente\n\t5.Crear historial del paciente\n\t6.Salir'
     globals.borrar_pantalla()
     if (op != 6):
         print(title)
@@ -120,7 +123,7 @@ def gestionP(op :int):
                 case 1:
                     roles.newPaciente()
                 case 2:
-                    pass
+                    citas.menuCitas(0)
                 case 3:
                     resultado = roles.buscarP()
                     if resultado is None:
@@ -134,7 +137,7 @@ def gestionP(op :int):
                 case 4:
                     roles.modificarP()
                 case 5:
-                    pass
+                    gh.createHistory()
                 case 6:
                     globals.borrar_pantalla()
                     print('Ha salido de gestion al paciente')

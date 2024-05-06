@@ -20,16 +20,20 @@ def newService():
     globals.servicios.get('area').update({codServicio: servicio})
     opciones = 'Desea hacer un nuevo registro: \n1.Si\n2.No'
     print(opciones)
-    op = int(input('=>'))
-    while(op != 1 and op != 2):
-        globals.borrar_pantalla()
-        print('Opcion inválida...Intente Nuevamente')
-        print(opciones)
+    try:
         op = int(input('=>'))
-    if(op == 1):
+        while(op != 1 and op != 2):
+            globals.borrar_pantalla()
+            print('Opcion inválida...Intente Nuevamente')
+            print(opciones)
+            op = int(input('=>'))
+        if(op == 1):
+            newService()
+        else:
+            faces.gestionS(0)
+    except ValueError:
+        print('Opción inválida.Intente nuevamente')
         newService()
-    else:
-        faces.gestionS(0)
 
 def buscarS():
     globals.borrar_pantalla()
