@@ -10,9 +10,11 @@ def administrador():
         usuario = json.load(rf)
     
     cedulaAdministrador = input('Ingrese la su cédula: ')
+    password = input ('Ingrese la contraseña: ')
     try:
         if (cedulaAdministrador in usuario.get('administrador').get(cedulaAdministrador).get('cedulaUser')):
-            barra.barraProgresoP()
+            if (password in usuario.get('administrador').get(cedulaAdministrador).get('contrasena')):
+                barra.barraProgresoP()
     except AttributeError:
         barra.barraProgresoD()
         inicio.menuEntrada(0)
